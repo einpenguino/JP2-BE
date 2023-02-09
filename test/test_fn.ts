@@ -13,7 +13,9 @@
 // let result = add('1, 2, 4, 5');
 // console.log(result);
 
-function sum(a, b) {
+function sum(a : number, b : number): number {
     return a + b;
 }
-module.exports = sum
+// module.exports = sum
+// export {}
+export {sum}
