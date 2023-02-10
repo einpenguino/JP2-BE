@@ -1,3 +1,12 @@
+## Database Migration
+1. Once models are in place within prisma.schema, perform database schema migration
+```
+npx prisma migrate dev --name init
+```
+2. To reset migrations
+```
+npx prisma migrate reset
+```
 ## Database Seeding
 1. Include 'seed' KVP in package.json
 ```{
@@ -13,7 +22,7 @@
   }
 }
 ```
-2. Run Seed function from terminal
+1. Run Seed function from terminal
 ```
 npx prisma db seed
 ```
@@ -26,7 +35,7 @@ npm i -D jest @types/jest
 ```
 npx jest --init
 ```
-3. Via 
+1. Via 
    1. Babel
   ```
   npm install -D babel-jest @babel/core @babel/preset-env @babel/preset-typescript
