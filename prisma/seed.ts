@@ -1,57 +1,44 @@
 import { PrismaClient } from '@prisma/client'
 import { data } from './seed_data'
+import rainData from './seedData/rainfall_raw.json'
+import { parseAPI } from '../API/Parsers'
+import { pData } from './seedData/parsed'
+import { create } from 'domain'
 const prisma = new PrismaClient()
-async function main() {
-  // const alice = await prisma.user.upsert({
-  //   where: { email: 'alice@prisma.io' },
-  //   update: {},
-  //   create: {
-  //     email: 'alice@prisma.io',
-  //     name: 'Alice',
-  //     posts: {
-  //       create: {
-  //         title: 'Check out Prisma with Next.js',
-  //         content: 'https://www.prisma.io/nextjs',
-  //         published: true,
-  //       },
-  //     },
-  //   },
-  // })
-  // const bob = await prisma.user.upsert({
-  //   where: { email: 'bob@prisma.io' },
-  //   update: {},
-  //   create: {
-  //     email: 'bob@prisma.io',
-  //     name: 'Bob',
-  //     posts: {
-  //       create: [
-  //         {
-  //           title: 'Follow Prisma on Twitter',
-  //           content: 'https://twitter.com/prisma',
-  //           published: true,
-  //         },
-  //         {
-  //           title: 'Follow Nexus on Twitter',
-  //           content: 'https://twitter.com/nexusgql',
-  //           published: true,
-  //         },
-  //       ],
-  //     },
-  //   },
-  // })
-  // console.log({ alice, bob })
-  
-}
 
-async function createMany() {
+async function createOne(data : any) {
+  const user = await prisma.rainfall.create({
+    data : data
+  })
+  console.log(user)
+}
+let iobj : any
+iobj = parseAPI(rainData)
+
+
+async function seed() {
   await prisma.user.createMany({
     data: data,
     skipDuplicates: true, // Skip 'Bobo'
   })
+  await prisma.rainfall.createMany({
+    data : parseAPI(rainData),
+    skipDuplicates: true,
+  })
+
+  
+
+  console.log(iobj.length)
   console.log('Multiple Creation Completed!')
 }
-// main()
-createMany()
+
+interface stationsData {
+  'timestamp': string,
+  'station_id': string,
+  'value': number
+}
+
+seed()
   .then(async () => {
     await prisma.$disconnect()
   })

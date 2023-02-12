@@ -35,4 +35,26 @@ model User {
   name    String?
   posts   Post[]
   profile Profile?
+  isAdmin Boolean? @default(false)
+}
+
+model Rainfall{
+  id      Int      @id @default(autoincrement())
+  timestamp DateTime
+  station_id String
+  value Float
+  sensor_map Stations
+
+  @@unique([timestamp, station_id])
+}
+
+model Stations {
+  id Int @id @default(autoincrement())
+  device_id String
+  name String @unique
+  latitude Float @default(0)
+  longitude Float @default(0)
+  reading_type String
+  reading_unit String
+  station_id Rainfall @relation(fields: [device_id], references: [station_id])
 }

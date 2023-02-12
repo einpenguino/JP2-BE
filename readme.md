@@ -26,6 +26,7 @@ npx prisma migrate reset
 ```
 npx prisma db seed
 ```
+2. If using JSON files for seeding, need to enable 'resolveJsonModle: true' in tsconfig.json
 ## Typescript testing
 ```
 npm i -D jest @types/jest
@@ -57,3 +58,4 @@ npx jest --init
   ```
   npm install -D @jest/globals
   ```
+
