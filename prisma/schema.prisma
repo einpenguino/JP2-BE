@@ -38,23 +38,65 @@ model User {
   isAdmin Boolean? @default(false)
 }
 
+model Airtemp {
+  id      Int      @id @default(autoincrement())
+  timestamp DateTime
+  station_id String
+  value Float
+  // sensor_map Stations @relation(fields:[station_id], references: [device_id])
+
+  @@unique([timestamp, station_id])
+}
+
+model Humidity {
+  id      Int      @id @default(autoincrement())
+  timestamp DateTime
+  station_id String
+  value Float
+  // sensor_map Stations @relation(fields:[station_id], references: [device_id])
+
+  @@unique([timestamp, station_id])
+}
+
 model Rainfall{
   id      Int      @id @default(autoincrement())
   timestamp DateTime
   station_id String
   value Float
-  sensor_map Stations
+  // sensor_map Stations @relation(fields:[station_id], references: [device_id])
+
+  @@unique([timestamp, station_id])
+}
+model Winddir {
+  id      Int      @id @default(autoincrement())
+  timestamp DateTime
+  station_id String
+  value Float
+  // sensor_map Stations @relation(fields:[station_id], references: [device_id])
 
   @@unique([timestamp, station_id])
 }
 
+model Windspeed {
+  id      Int      @id @default(autoincrement())
+  timestamp DateTime
+  station_id String
+  value Float
+  // sensor_map Stations @relation(fields:[station_id], references: [device_id])
+
+  @@unique([timestamp, station_id])
+}
+
+
 model Stations {
   id Int @id @default(autoincrement())
-  device_id String
-  name String @unique
+  device_id String 
+  name String
   latitude Float @default(0)
   longitude Float @default(0)
   reading_type String
   reading_unit String
-  station_id Rainfall @relation(fields: [device_id], references: [station_id])
+  // station_id Rainfall @relation(fields: [device_id], references: [station_id])
+
+  @@unique([device_id, reading_type])
 }

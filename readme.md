@@ -1,9 +1,28 @@
+## Prisma Client
+1. Prisma client by default is generated into node_modules/.prisma/client, may run into compatibility issues over other machines as node_modules is not synced. Either change location of output folder, or regenerate with every new machine installation.
+2. Setup:
+   1. Ensure prisma-cli is installed
+   2. Ensure generatore code is in schema.prisma file
+   ```
+    generator client {
+      provider = "prisma-client-js"
+    }
+   ```
+  3. Install Prisma client
+   ```
+   npm install @prisma/client
+   ``` 
+  4. Generate Prisma Client
+   ```
+   npx prisma generate
+   ```
+3. Will re-use single prisma client instance for now.
 ## Database Migration
 1. Once models are in place within prisma.schema, perform database schema migration
 ```
 npx prisma migrate dev --name init
 ```
-2. To reset migrations
+1. To reset migrations
 ```
 npx prisma migrate reset
 ```
@@ -26,7 +45,7 @@ npx prisma migrate reset
 ```
 npx prisma db seed
 ```
-2. If using JSON files for seeding, need to enable 'resolveJsonModle: true' in tsconfig.json
+1. If using JSON files for seeding, need to enable 'resolveJsonModle: true' in tsconfig.json
 ## Typescript testing
 ```
 npm i -D jest @types/jest
@@ -59,3 +78,19 @@ npx jest --init
   npm install -D @jest/globals
   ```
 
+## Setup BE
+1. Setup Express
+```
+npm i express express-async-handler @types/express
+```
+2. Setup dotenv
+```
+npm i dotenv
+```
+3. index.ts / app.ts of root folder:
+Order here matters, initialise components which are depended on first.
+```
+require('dotenv').config
+require('./models)
+require(./routers)
+```

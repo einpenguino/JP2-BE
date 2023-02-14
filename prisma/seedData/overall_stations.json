@@ -1,0 +1,1068 @@
+{
+  "stations": [
+    {
+      "device_id": "S109",
+      "name": "Ang Mo Kio Avenue 5",
+      "latitude": 1.3764,
+      "longitude": 103.8492,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S117",
+      "name": "Banyan Road",
+      "latitude": 1.256,
+      "longitude": 103.679,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S50",
+      "name": "Clementi Road",
+      "latitude": 1.3337,
+      "longitude": 103.7768,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S107",
+      "name": "East Coast Parkway",
+      "latitude": 1.3135,
+      "longitude": 103.9625,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S43",
+      "name": "Kim Chuan Road",
+      "latitude": 1.3399,
+      "longitude": 103.8878,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S108",
+      "name": "Marina Gardens Drive",
+      "latitude": 1.2799,
+      "longitude": 103.8703,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S44",
+      "name": "Nanyang Avenue",
+      "latitude": 1.34583,
+      "longitude": 103.68166,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S121",
+      "name": "Old Choa Chu Kang Road",
+      "latitude": 1.37288,
+      "longitude": 103.72244,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S106",
+      "name": "Pulau Ubin",
+      "latitude": 1.4168,
+      "longitude": 103.9673,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S102",
+      "name": "Semakau Landfill",
+      "latitude": 1.189,
+      "longitude": 103.768,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S60",
+      "name": "Sentosa",
+      "latitude": 1.25,
+      "longitude": 103.8279,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S115",
+      "name": "Tuas South Avenue 3",
+      "latitude": 1.29377,
+      "longitude": 103.61843,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S24",
+      "name": "Upper Changi Road North",
+      "latitude": 1.3678,
+      "longitude": 103.9826,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S116",
+      "name": "West Coast Highway",
+      "latitude": 1.281,
+      "longitude": 103.754,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S104",
+      "name": "Woodlands Avenue 9",
+      "latitude": 1.44387,
+      "longitude": 103.78538,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S100",
+      "name": "Woodlands Road",
+      "latitude": 1.4172,
+      "longitude": 103.74855,
+      "reading_type": "DBT 1M F",
+      "reading_unit": "deg C"
+    },
+    {
+      "device_id": "S109",
+      "name": "Ang Mo Kio Avenue 5",
+      "latitude": 1.3764,
+      "longitude": 103.8492,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S117",
+      "name": "Banyan Road",
+      "latitude": 1.256,
+      "longitude": 103.679,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S50",
+      "name": "Clementi Road",
+      "latitude": 1.3337,
+      "longitude": 103.7768,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S107",
+      "name": "East Coast Parkway",
+      "latitude": 1.3135,
+      "longitude": 103.9625,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S43",
+      "name": "Kim Chuan Road",
+      "latitude": 1.3399,
+      "longitude": 103.8878,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S108",
+      "name": "Marina Gardens Drive",
+      "latitude": 1.2799,
+      "longitude": 103.8703,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S44",
+      "name": "Nanyang Avenue",
+      "latitude": 1.34583,
+      "longitude": 103.68166,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S121",
+      "name": "Old Choa Chu Kang Road",
+      "latitude": 1.37288,
+      "longitude": 103.72244,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S106",
+      "name": "Pulau Ubin",
+      "latitude": 1.4168,
+      "longitude": 103.9673,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S102",
+      "name": "Semakau Landfill",
+      "latitude": 1.189,
+      "longitude": 103.768,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S60",
+      "name": "Sentosa",
+      "latitude": 1.25,
+      "longitude": 103.8279,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S115",
+      "name": "Tuas South Avenue 3",
+      "latitude": 1.29377,
+      "longitude": 103.61843,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S24",
+      "name": "Upper Changi Road North",
+      "latitude": 1.3678,
+      "longitude": 103.9826,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S116",
+      "name": "West Coast Highway",
+      "latitude": 1.281,
+      "longitude": 103.754,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S104",
+      "name": "Woodlands Avenue 9",
+      "latitude": 1.44387,
+      "longitude": 103.78538,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S100",
+      "name": "Woodlands Road",
+      "latitude": 1.4172,
+      "longitude": 103.74855,
+      "reading_type": "RH 1M F",
+      "reading_unit": "percentage"
+    },
+    {
+      "device_id": "S77",
+      "name": "Alexandra Road",
+      "latitude": 1.2937,
+      "longitude": 103.8125,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S109",
+      "name": "Ang Mo Kio Avenue 5",
+      "latitude": 1.3764,
+      "longitude": 103.8492,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S117",
+      "name": "Banyan Road",
+      "latitude": 1.256,
+      "longitude": 103.679,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S64",
+      "name": "Bukit Panjang Road",
+      "latitude": 1.3824,
+      "longitude": 103.7603,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S90",
+      "name": "Bukit Timah Road",
+      "latitude": 1.3191,
+      "longitude": 103.8191,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S61",
+      "name": "Chai Chee Street",
+      "latitude": 1.323,
+      "longitude": 103.9217,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S114",
+      "name": "Choa Chu Kang Avenue 4",
+      "latitude": 1.38,
+      "longitude": 103.73,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S50",
+      "name": "Clementi Road",
+      "latitude": 1.3337,
+      "longitude": 103.7768,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S107",
+      "name": "East Coast Parkway",
+      "latitude": 1.3135,
+      "longitude": 103.9625,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S215",
+      "name": "GEYLANG EAST CENTRAL",
+      "latitude": 1.32785,
+      "longitude": 103.88899,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S118",
+      "name": "Handy Road",
+      "latitude": 1.2994,
+      "longitude": 103.8461,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S120",
+      "name": "Holland Road",
+      "latitude": 1.30874,
+      "longitude": 103.818,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S33",
+      "name": "Jurong Pier Road",
+      "latitude": 1.3081,
+      "longitude": 103.71,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S71",
+      "name": "Kent Ridge Road",
+      "latitude": 1.2923,
+      "longitude": 103.7815,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S43",
+      "name": "Kim Chuan Road",
+      "latitude": 1.3399,
+      "longitude": 103.8878,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S66",
+      "name": "Kranji Way",
+      "latitude": 1.4387,
+      "longitude": 103.7363,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S112",
+      "name": "Lim Chu Kang Road",
+      "latitude": 1.43854,
+      "longitude": 103.70131,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S40",
+      "name": "Mandai Lake Road",
+      "latitude": 1.4044,
+      "longitude": 103.78962,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S108",
+      "name": "Marina Gardens Drive",
+      "latitude": 1.2799,
+      "longitude": 103.8703,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S113",
+      "name": "Marine Parade Road",
+      "latitude": 1.30648,
+      "longitude": 103.9104,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S44",
+      "name": "Nanyang Avenue",
+      "latitude": 1.34583,
+      "longitude": 103.68166,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S119",
+      "name": "Nicoll Highway",
+      "latitude": 1.30105,
+      "longitude": 103.8666,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S121",
+      "name": "Old Choa Chu Kang Road",
+      "latitude": 1.37288,
+      "longitude": 103.72244,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S35",
+      "name": "Old Toh Tuck Road",
+      "latitude": 1.3329,
+      "longitude": 103.7556,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S94",
+      "name": "Pasir Ris Street 51",
+      "latitude": 1.3662,
+      "longitude": 103.9528,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S78",
+      "name": "Poole Road",
+      "latitude": 1.30703,
+      "longitude": 103.89067,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S106",
+      "name": "Pulau Ubin",
+      "latitude": 1.4168,
+      "longitude": 103.9673,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S81",
+      "name": "Punggol Central",
+      "latitude": 1.4029,
+      "longitude": 103.9092,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S201",
+      "name": "S201",
+      "latitude": 1.32311,
+      "longitude": 103.76714,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S202",
+      "name": "S202",
+      "latitude": 1.30968,
+      "longitude": 103.7578,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S203",
+      "name": "S203",
+      "latitude": 1.29164,
+      "longitude": 103.7702,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S204",
+      "name": "S204",
+      "latitude": 1.40081,
+      "longitude": 103.88217,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S205",
+      "name": "S205",
+      "latitude": 1.38829,
+      "longitude": 103.9116,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S207",
+      "name": "S207",
+      "latitude": 1.32485,
+      "longitude": 103.95836,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S208",
+      "name": "S208",
+      "latitude": 1.3136,
+      "longitude": 104.00317,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S209",
+      "name": "S209",
+      "latitude": 1.42111,
+      "longitude": 103.84472,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S210",
+      "name": "S210",
+      "latitude": 1.44003,
+      "longitude": 103.76904,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S211",
+      "name": "S211",
+      "latitude": 1.42918,
+      "longitude": 103.75711,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S212",
+      "name": "S212",
+      "latitude": 1.31835,
+      "longitude": 103.93574,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S213",
+      "name": "S213",
+      "latitude": 1.32427,
+      "longitude": 103.8097,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S214",
+      "name": "S214",
+      "latitude": 1.29911,
+      "longitude": 103.88289,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S216",
+      "name": "S216",
+      "latitude": 1.36019,
+      "longitude": 103.85335,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S217",
+      "name": "S217",
+      "latitude": 1.35041,
+      "longitude": 103.85526,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S218",
+      "name": "S218",
+      "latitude": 1.36491,
+      "longitude": 103.75065,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S219",
+      "name": "S219",
+      "latitude": 1.37999,
+      "longitude": 103.87643,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S220",
+      "name": "S220",
+      "latitude": 1.38666,
+      "longitude": 103.89797,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S221",
+      "name": "S221",
+      "latitude": 1.35691,
+      "longitude": 103.89088,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S222",
+      "name": "S222",
+      "latitude": 1.28987,
+      "longitude": 103.82364,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S223",
+      "name": "S223",
+      "latitude": 1.29984,
+      "longitude": 103.80264,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S224",
+      "name": "S224",
+      "latitude": 1.34392,
+      "longitude": 103.98409,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S226",
+      "name": "S226",
+      "latitude": 1.27472,
+      "longitude": 103.80389,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S227",
+      "name": "S227",
+      "latitude": 1.43944,
+      "longitude": 103.80389,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S228",
+      "name": "S228",
+      "latitude": 1.34703,
+      "longitude": 103.70073,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S229",
+      "name": "S229",
+      "latitude": 1.35167,
+      "longitude": 103.72195,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S230",
+      "name": "S230",
+      "latitude": 1.30167,
+      "longitude": 103.76444,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S900",
+      "name": "Seletar Aerospace View",
+      "latitude": 1.41284,
+      "longitude": 103.86922,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S102",
+      "name": "Semakau Landfill",
+      "latitude": 1.189,
+      "longitude": 103.768,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S60",
+      "name": "Sentosa",
+      "latitude": 1.25,
+      "longitude": 103.8279,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S84",
+      "name": "Simei Avenue",
+      "latitude": 1.3437,
+      "longitude": 103.9444,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S79",
+      "name": "Somerset Road",
+      "latitude": 1.3004,
+      "longitude": 103.8372,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S88",
+      "name": "Toa Payoh North",
+      "latitude": 1.3427,
+      "longitude": 103.8482,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S123",
+      "name": "Towner Road",
+      "latitude": 1.3214,
+      "longitude": 103.8577,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S89",
+      "name": "Tuas Road",
+      "latitude": 1.31985,
+      "longitude": 103.66162,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S115",
+      "name": "Tuas South Avenue 3",
+      "latitude": 1.29377,
+      "longitude": 103.61843,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S24",
+      "name": "Upper Changi Road North",
+      "latitude": 1.3678,
+      "longitude": 103.9826,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S69",
+      "name": "Upper Peirce Reservoir Park",
+      "latitude": 1.37,
+      "longitude": 103.805,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S08",
+      "name": "Upper Thomson Road",
+      "latitude": 1.3701,
+      "longitude": 103.8271,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S116",
+      "name": "West Coast Highway",
+      "latitude": 1.281,
+      "longitude": 103.754,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S104",
+      "name": "Woodlands Avenue 9",
+      "latitude": 1.44387,
+      "longitude": 103.78538,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S100",
+      "name": "Woodlands Road",
+      "latitude": 1.4172,
+      "longitude": 103.74855,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S36",
+      "name": "Upper Serangoon Road",
+      "latitude": 1.3382,
+      "longitude": 103.8657,
+      "reading_type": "TB1 Rainfall 5 Minute Total F",
+      "reading_unit": "mm"
+    },
+    {
+      "device_id": "S109",
+      "name": "Ang Mo Kio Avenue 5",
+      "latitude": 1.3764,
+      "longitude": 103.8492,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S117",
+      "name": "Banyan Road",
+      "latitude": 1.256,
+      "longitude": 103.679,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S50",
+      "name": "Clementi Road",
+      "latitude": 1.3337,
+      "longitude": 103.7768,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S107",
+      "name": "East Coast Parkway",
+      "latitude": 1.3135,
+      "longitude": 103.9625,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S43",
+      "name": "Kim Chuan Road",
+      "latitude": 1.3399,
+      "longitude": 103.8878,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S108",
+      "name": "Marina Gardens Drive",
+      "latitude": 1.2799,
+      "longitude": 103.8703,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S44",
+      "name": "Nanyang Avenue",
+      "latitude": 1.34583,
+      "longitude": 103.68166,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S121",
+      "name": "Old Choa Chu Kang Road",
+      "latitude": 1.37288,
+      "longitude": 103.72244,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S102",
+      "name": "Semakau Landfill",
+      "latitude": 1.189,
+      "longitude": 103.768,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S60",
+      "name": "Sentosa",
+      "latitude": 1.25,
+      "longitude": 103.8279,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S115",
+      "name": "Tuas South Avenue 3",
+      "latitude": 1.29377,
+      "longitude": 103.61843,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S24",
+      "name": "Upper Changi Road North",
+      "latitude": 1.3678,
+      "longitude": 103.9826,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S116",
+      "name": "West Coast Highway",
+      "latitude": 1.281,
+      "longitude": 103.754,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S104",
+      "name": "Woodlands Avenue 9",
+      "latitude": 1.44387,
+      "longitude": 103.78538,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S100",
+      "name": "Woodlands Road",
+      "latitude": 1.4172,
+      "longitude": 103.74855,
+      "reading_type": "Wind Dir AVG (S) 10M M1M",
+      "reading_unit": "degrees"
+    },
+    {
+      "device_id": "S109",
+      "name": "Ang Mo Kio Avenue 5",
+      "latitude": 1.3764,
+      "longitude": 103.8492,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S117",
+      "name": "Banyan Road",
+      "latitude": 1.256,
+      "longitude": 103.679,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S50",
+      "name": "Clementi Road",
+      "latitude": 1.3337,
+      "longitude": 103.7768,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S107",
+      "name": "East Coast Parkway",
+      "latitude": 1.3135,
+      "longitude": 103.9625,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S43",
+      "name": "Kim Chuan Road",
+      "latitude": 1.3399,
+      "longitude": 103.8878,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S108",
+      "name": "Marina Gardens Drive",
+      "latitude": 1.2799,
+      "longitude": 103.8703,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S44",
+      "name": "Nanyang Avenue",
+      "latitude": 1.34583,
+      "longitude": 103.68166,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S121",
+      "name": "Old Choa Chu Kang Road",
+      "latitude": 1.37288,
+      "longitude": 103.72244,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S102",
+      "name": "Semakau Landfill",
+      "latitude": 1.189,
+      "longitude": 103.768,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S60",
+      "name": "Sentosa",
+      "latitude": 1.25,
+      "longitude": 103.8279,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S115",
+      "name": "Tuas South Avenue 3",
+      "latitude": 1.29377,
+      "longitude": 103.61843,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S24",
+      "name": "Upper Changi Road North",
+      "latitude": 1.3678,
+      "longitude": 103.9826,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S116",
+      "name": "West Coast Highway",
+      "latitude": 1.281,
+      "longitude": 103.754,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S104",
+      "name": "Woodlands Avenue 9",
+      "latitude": 1.44387,
+      "longitude": 103.78538,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    },
+    {
+      "device_id": "S100",
+      "name": "Woodlands Road",
+      "latitude": 1.4172,
+      "longitude": 103.74855,
+      "reading_type": "Wind Speed AVG(S)10M M1M",
+      "reading_unit": "knots"
+    }
+  ]
+}
