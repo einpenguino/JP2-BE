@@ -3,8 +3,6 @@ const cors = require('cors')
 const app = express()
 import read from '../controllers/stations'
 import { readRainfall, rainfallLatest } from '../controllers/rainfall'
-// const read = require('../controllers/stations')
-// import prisma from '../app'
 
 const corsConfig = {
     credentials: true,
@@ -16,9 +14,9 @@ app.use(express.json())
 
 // ... your REST API routes will go here
 // app.get('/', find)
-app.get('/', (req, res) => {
-    res.send('Hello')
-})
+// app.get('/', (req, res) => {
+//     res.send('Hello')
+// })
 
 // async function r1 = 
 app.get('/stations', async (req, res) => {
@@ -29,8 +27,6 @@ app.get('/stations', async (req, res) => {
     catch(e){
         res.sendStatus(500)
     }
-    
-    
 })
 
 app.get('/rainfall', async (req, res) => {

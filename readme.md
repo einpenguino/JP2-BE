@@ -94,3 +94,6 @@ require('dotenv').config
 require('./models)
 require(./routers)
 ```
+
+## TODO 
+[] Implement seperate prisma service client for self updating functions
