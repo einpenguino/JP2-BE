@@ -43,7 +43,7 @@ function parseMetaData(readings : any){
   return stationsMet
 }
 
-function toLocaleISO(date : string) {
+function toLocaleISO(date : string | Date) {
   let d : Date
   d = new Date(date)
   let dateArr : string[]
@@ -51,7 +51,7 @@ function toLocaleISO(date : string) {
   return `${dateArr[2]}-${dateArr[1]}-${dateArr[0]}T${d.toLocaleTimeString('en-GB', {hour12:false})}`
 }
 
-function toLocaleQueryDate(date : string){
+function toLocaleQueryDate(date : string | Date){
   let d : Date
   d = new Date(date)
   let dateArr : string[]
@@ -59,7 +59,7 @@ function toLocaleQueryDate(date : string){
   return `${dateArr[2]}-${dateArr[1]}-${dateArr[0]}`
 }
 
-export { parseAPI, parseMetaData, toLocaleISO, toLocaleQueryDate }
+export { parseAPI, parseMetaData }
 
 // () => {
 //   let result : any

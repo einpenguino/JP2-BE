@@ -52,6 +52,8 @@ app.get('/rainfallnow', async (req, res) => {
     }
 })
 
+app.get('/latest')
+
 // console.log(read({}))
 
 app.listen(process.env.EXPRESS_PORT, () =>

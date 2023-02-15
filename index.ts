@@ -1,74 +1,45 @@
-// import { PrismaClient } from '@prisma/client'
 import rainData from './prisma/seedData/rainfall_raw.json'
 import {pData} from './prisma/seedData/parsed'
-import { parseMetaData, toLocaleISO, toLocaleQueryDate } from './API/Parsers'
-// const prisma = new PrismaClient()
-// import prisma = require("./app")
+import { parseAPI, parseMetaData } from './API/Parsers'
+import { toLocaleISO, toLocaleQueryDate, getDailyScheduler, miniScheduler } from './API/Datetime'
 import read from './controllers/stations'
 import { readRainfall, rainfallLatest } from './controllers/rainfall'
 import { domainToASCII } from 'url'
-// import prisma from './app'
-// const prisma = require('./app')
+import { getRainfall, getAirTemp, getHumidity, getWindSpeed, getWindDir } from './API/Queries'
+import { updateRainMini, updateRain } from './API'
+import axios from 'axios'
+import prisma from './controllers/index'
+const cron = require('node-cron')
 
 async function main () {
 
 }
 
-async function createOne(data : any) {
-  // await prisma.rainfall.create({
-  //   data : data
-  // })
-}
-// let lobj : any
-// lobj = parseMetaData(rainData)
-// console.log(lobj)
-
-async function findStations(){
-  // const stations = await prisma.stations.findMany({
-  //   where : {
-      
-  //   },
-  //   // select : {
-  //   //   id:false
-  //   // }
-  // })
-  // console.log(stations.length)
-}
-
-// console.log(rainfallLatest()
 (async () => {
-  let result : any
-  let d : any
-  let d1 : any
-  let locale : any
-  let option : any
-  let localeString : any
-  
-  // locale = {
-  //   nu : ''
-  // }
-  option = {
-    'dateStyle' : 'short',
-    'timeStyle' : 'long',
-    // calendar : 'iso8601',
-    'timeZone' : "Asia/Singapore"
-  }
-  localeString = {
-    year:'numeric',
-    month:'numeric',
-    day:'numeric',
-    hour:'numeric',
-    minute:'numeric',
-    second:'numeric',
-    hour12:false
-    // fractionalSecondDigits: 3
-  }
-
-
-  result = await rainfallLatest()
-  console.log(toLocaleISO(result.timestamp))
-  console.log(toLocaleQueryDate(result.timestamp))
+  // let a = await parseMetaData(rainData)
+  // console.log(a)
+  let a : any
+  a = await getAirTemp('date_time=2023-02-15T15:00:00')
+  console.log(parseAPI(a.data))
 })()
+
+let a = 0
+cron.schedule("20 */5 * * * *", function () {
+  a += 1
+  console.log("---------------------");
+  console.log("running a task every 20th second");
+  updateRain(10, 100)
+  console.log(a);
+  console.log(toLocaleISO(new Date()))
+});
+
+// cron.schedule("*/5 * * * * *", function () {
+//   console.log("---------------------");
+//   console.log("running a task every 5 second");
+//   // updateRainMini()
+//   // console.log(a);
+//   console.log(toLocaleISO(new Date()))
+// });
 
 // console.log(findStations())
 // findStations()

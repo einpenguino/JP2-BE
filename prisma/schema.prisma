@@ -83,6 +83,7 @@ model Windspeed {
   station_id String
   value Float
   // sensor_map Stations @relation(fields:[station_id], references: [device_id])
+  // station_fk Stations
 
   @@unique([timestamp, station_id])
 }
@@ -97,6 +98,7 @@ model Stations {
   reading_type String
   reading_unit String
   // station_id Rainfall @relation(fields: [device_id], references: [station_id])
+  // windspeed_fk Windspeed[] @relation(fields: [device_id], references: [station_id])
 
   @@unique([device_id, reading_type])
 }
