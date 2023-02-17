@@ -3,6 +3,24 @@ import { getWindDir } from '../API/Queries'
 import { toLocaleISO, toLocaleQueryDate, getDailyScheduler, miniScheduler } from '../API/Datetime'
 import prisma from './index'
 
+async function windDirLatestReadings() {
+    try{
+        const windDir = await prisma.winddir.findMany({
+            where : {},
+            orderBy : {timestamp : 'desc'} ,
+            distinct: ['station_id'],
+            select : {
+              timestamp : true,
+              station_id : true,
+              value : true
+            }
+        })
+        return windDir
+    }
+    catch(e){
+        console.log(e)
+    }
+}
 async function readWindDir(params : any) {
     try{
         const result = await prisma.winddir.findMany({
@@ -151,4 +169,4 @@ async function updateWindDir(delay : number, threshold : number) {
     
 }
 
-export { readWindDir, windDirLatest, updateWindDirDaily, updateWindDirMini, updateWindDir }
+export { windDirLatestReadings, readWindDir, windDirLatest, updateWindDirDaily, updateWindDirMini, updateWindDir }

@@ -11,16 +11,16 @@ datasource db {
 }
 
 // Models
-model Post {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  title     String   @db.VarChar(255)
-  content   String?
-  published Boolean  @default(false)
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  Int
-}
+// model Post {
+//   id        Int      @id @default(autoincrement())
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+//   title     String   @db.VarChar(255)
+//   content   String?
+//   published Boolean  @default(false)
+//   author    User     @relation(fields: [authorId], references: [id])
+//   authorId  Int
+// }
 
 model Profile {
   id     Int     @id @default(autoincrement())
@@ -29,14 +29,50 @@ model Profile {
   userId Int     @unique
 }
 
+model Places {
+  id  Int @id @default(autoincrement())
+  name String
+  latitude Float
+  longitude Float
+  // user_fk Int
+  route_start Routes[] @relation("start_rel")
+  route_end Routes[] @relation("end_rel")
+  // user_rel User @relation(fields:[user_fk], references:[id])
+  @@unique([name, latitude, longitude])
+}
+
+model Routes {
+  id Int @id @default(autoincrement())
+  start_id Int
+  end_id Int
+  user_fk Int
+  start_rel Places @relation("start_rel", fields:[start_id], references: [id])
+  end_rel Places @relation("end_rel", fields:[end_id], references: [id])
+  user_rel User? @relation(fields:[user_fk], references:[id])
+
+  @@unique([start_id, end_id, user_fk])
+}
+
 model User {
   id      Int      @id @default(autoincrement())
   email   String   @unique
+  password  String
   name    String?
-  posts   Post[]
+  // places Places[]
   profile Profile?
+  routes  Int?
+  routes_rel Routes[]
   isAdmin Boolean? @default(false)
 }
+
+// model User {
+//   id      Int      @id @default(autoincrement())
+//   email   String   @unique
+//   name    String?
+//   posts   Post[]
+//   profile Profile?
+//   isAdmin Boolean? @default(false)
+// }
 
 model Airtemp {
   id      Int      @id @default(autoincrement())
@@ -82,8 +118,8 @@ model Windspeed {
   timestamp DateTime
   station_id String
   value Float
-  // sensor_map Stations @relation(fields:[station_id], references: [device_id])
-  // station_fk Stations
+  // station_fk Stations? @relation(fields : [stationid], references: [id])
+  // stationid Int?
 
   @@unique([timestamp, station_id])
 }
@@ -98,7 +134,7 @@ model Stations {
   reading_type String
   reading_unit String
   // station_id Rainfall @relation(fields: [device_id], references: [station_id])
-  // windspeed_fk Windspeed[] @relation(fields: [device_id], references: [station_id])
+  // windspeed_fk Windspeed[]
 
   @@unique([device_id, reading_type])
 }

@@ -3,6 +3,25 @@ import { getWindSpeed } from '../API/Queries'
 import { toLocaleISO, toLocaleQueryDate, getDailyScheduler, miniScheduler } from '../API/Datetime'
 import prisma from './index'
 
+async function windSpeedLatestReadings() {
+    try{
+        const windSpeed = await prisma.windspeed.findMany({
+            where : {},
+            orderBy : {timestamp : 'desc'} ,
+            distinct: ['station_id'],
+            select : {
+              timestamp : true,
+              station_id : true,
+              value : true
+            }
+        })
+        return windSpeed
+    }
+    catch(e){
+        console.log(e)
+    }
+}
+
 async function readWindSpeed(params : any) {
     try{
         const result = await prisma.windspeed.findMany({
@@ -151,4 +170,4 @@ async function updateWindSpeed(delay : number, threshold : number) {
     
 }
 
-export { readWindSpeed, windSpeedLatest, updateWindSpeedDaily, updateWindSpeedMini, updateWindSpeed }
+export { windSpeedLatestReadings, readWindSpeed, windSpeedLatest, updateWindSpeedDaily, updateWindSpeedMini, updateWindSpeed }

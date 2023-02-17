@@ -3,6 +3,25 @@ import { getHumidity } from '../API/Queries'
 import { toLocaleISO, toLocaleQueryDate, getDailyScheduler, miniScheduler } from '../API/Datetime'
 import prisma from './index'
 
+async function humidityLatestReadings() {
+    try{
+        const humidity = await prisma.humidity.findMany({
+            where : {},
+            orderBy : {timestamp : 'desc'} ,
+            distinct: ['station_id'],
+            select : {
+              timestamp : true,
+              station_id : true,
+              value : true
+            }
+        })
+        return humidity
+    }
+    catch(e){
+        console.log(e)
+    }
+}
+
 async function readHumidity(params : any) {
     try{
         const result = await prisma.humidity.findMany({
@@ -151,4 +170,4 @@ async function updateHumidity(delay : number, threshold : number) {
     
 }
 
-export { readHumidity, humidityLatest, updateHumidityDaily, updateHumidityMini, updateHumidity }
+export { humidityLatestReadings, readHumidity, humidityLatest, updateHumidityDaily, updateHumidityMini, updateHumidity }

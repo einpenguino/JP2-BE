@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client'
-import { data } from './seed_data'
+// import { data } from './seed_data'
+import { UserSeed } from './seed_data'
 import rainData from './seedData/rainfall_raw.json'
 import stationData from './seedData/overall_stations.json'
 import airTemp from './seedData/airtemp_raw.json'
@@ -23,9 +24,13 @@ iobj = parseAPI(rainData)
 
 async function seed() {
   await prisma.user.createMany({
-    data: data,
+    data: await UserSeed(),
     skipDuplicates: true, // Skip 'Bobo'
   })
+  await prisma.stations.createMany({
+    data:stationData.stations,
+    skipDuplicates: true
+  })  
   await prisma.airtemp.createMany({
     data : parseAPI(airTemp),
     skipDuplicates : true
@@ -46,10 +51,7 @@ async function seed() {
     data : parseAPI(windSpeed),
     skipDuplicates : true
   })
-  await prisma.stations.createMany({
-    data:stationData.stations,
-    skipDuplicates: true
-  })  
+  
 
   console.log(iobj.length)
   console.log('Multiple Creation Completed!')

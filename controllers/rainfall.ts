@@ -5,6 +5,26 @@ import { getRainfall } from '../API/Queries'
 import { toLocaleISO, toLocaleQueryDate, getDailyScheduler, miniScheduler } from '../API/Datetime'
 import prisma from './index'
 
+async function rainfallLatestReadings () {
+    try{
+        const rainfall = await prisma.rainfall.findMany({
+            where : {},
+            orderBy : {timestamp : 'desc'} ,
+            distinct: ['station_id'],
+            select : {
+              timestamp : true,
+              station_id : true,
+              value : true
+            }
+        })
+        return rainfall
+    }
+    catch(e){
+        console.log(e)
+    }
+    
+}
+
 async function readRainfall(params : any) {
     try{
         const result = await prisma.rainfall.findMany({
@@ -153,4 +173,4 @@ async function updateRain(delay : number, threshold : number) {
     
 }
 
-export { readRainfall, rainfallLatest, updateRainDaily, updateRainMini, updateRain }
+export { rainfallLatestReadings, readRainfall, rainfallLatest, updateRainDaily, updateRainMini, updateRain }

@@ -3,6 +3,25 @@ import { getAirTemp } from '../API/Queries'
 import { toLocaleISO, toLocaleQueryDate, getDailyScheduler, miniScheduler } from '../API/Datetime'
 import prisma from './index'
 
+async function airTempLatestReadings () {
+    try{
+        const airTemp = await prisma.airtemp.findMany({
+            where : {},
+            orderBy : {timestamp : 'desc'} ,
+            distinct: ['station_id'],
+            select : {
+              timestamp : true,
+              station_id : true,
+              value : true
+            }
+        })
+        return airTemp
+    }
+    catch(e){
+        console.log(e)
+    }
+}
+
 async function readAirTemp(params : any) {
     try{
         const result = await prisma.airtemp.findMany({
@@ -151,4 +170,4 @@ async function updateAirTemp(delay : number, threshold : number) {
     
 }
 
-export { readAirTemp, airTempLatest, updateAirTempDaily, updateAirTempMini, updateAirTemp }
+export { airTempLatestReadings, readAirTemp, airTempLatest, updateAirTempDaily, updateAirTempMini, updateAirTemp }

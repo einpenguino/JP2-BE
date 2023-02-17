@@ -17,18 +17,20 @@ import prisma from './index'
 //     }
 // }
 
-async function read(params : any) {
+async function stationsLatestReadings() {
     try{
-        const user = await prisma.stations.findMany({
-            where : params
+        const stations = await prisma.stations.findMany({
+            where: {},
+            orderBy: {
+                device_id: 'asc'
+            }
         })
-        // console.log(user)
-        return user
+        return stations
     }
     catch(e){
         console.log(e)
     }
 }
 // module.exports = { read }
-export = read
+export { stationsLatestReadings }
 // export * as stationController 

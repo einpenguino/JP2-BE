@@ -1,8 +1,10 @@
 import express from 'express'
 const cors = require('cors')
 const app = express()
-import read from '../controllers/stations'
+// import read from '../controllers/stations'
+import { stationsLatestReadings } from '../controllers/stations'
 import { readRainfall, rainfallLatest } from '../controllers/rainfall'
+import { sendAllLatest } from '../controllers/combination'
 
 const corsConfig = {
     credentials: true,
@@ -21,7 +23,7 @@ app.use(express.json())
 // async function r1 = 
 app.get('/stations', async (req, res) => {
     try{
-        const result = await read({})
+        const result = await stationsLatestReadings()
         res.json(result)
     }
     catch(e){
@@ -48,7 +50,16 @@ app.get('/rainfallnow', async (req, res) => {
     }
 })
 
-app.get('/latest')
+app.get('/latest', async (req, res) => {
+    try{
+        const result = await sendAllLatest()
+        // console.log('latest called!')
+        res.json(result)
+    }
+    catch(e){
+        res.sendStatus(500)
+    }
+})
 
 // console.log(read({}))
 

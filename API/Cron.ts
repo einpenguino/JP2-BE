@@ -8,32 +8,69 @@ import { toLocaleISO } from './Datetime'
 const cron = require('node-cron')
 try{
     //  Cronjob for updating rain sensor data every 5 mins
-    cron.schedule("20 */5 * * * *", function () {
-        // console.log("---------------------");
-        // console.log("updating rain sensors every 20th second of 5 mins");
-        updateRain(10, 100)
-        // console.log(toLocaleISO(new Date()))
+    cron.schedule("20 */5 * * * *", async function () {
+        try{
+            // console.log("---------------------");
+            // console.log("updating rain sensors every 20th second of 5 mins");
+            await updateRain(10, 100)
+            // console.log(toLocaleISO(new Date()))
+        }
+        catch(e){
+            console.log(e)
+        }
+        try{
+            await updateAirTemp(5, 100)
+        }catch(e){
+            console.log(e)
+        }
+        try{
+            await updateHumidity(5, 100)
+        }catch(e){
+            console.log(e)
+        }
+        try{
+            await updateWindDir(5,100)
+        }catch(e){
+            console.log(e)
+        }
+        try{
+            await updateWindSpeed(5,100)
+        }catch(e){
+            console.log(e)
+        }
+        
     });
     //  Cronjob for updating 1 min sensor data
-    cron.schedule("20 * * * * *", function () {
-        // console.log("---------------------");
-        // console.log("updating 1 min sensors every 20th second");
-        updateAirTemp(5, 100)
-        updateHumidity(5, 100)
-        updateWindDir(5,100)
-        updateWindSpeed(5,100)
-        // console.log(toLocaleISO(new Date()))
-    });
+    // cron.schedule("20 * * * * *", async function () {
+    //     try{
+    //         // console.log("---------------------");
+    //         // console.log("updating 1 min sensors every 20th second");
+    //         await updateAirTemp(5, 100)
+    //         await updateHumidity(5, 100)
+    //         await updateWindDir(5,100)
+    //         await updateWindSpeed(5,100)
+    //         // console.log(toLocaleISO(new Date()))
+    //     }
+    //     catch(e){
+    //         console.log(e)
+    //     }
+    // });
     // Cronjob for updating daily data at end of day
-    cron.schedule("20 55 23 * * *", function () {
-        // console.log("---------------------");
-        // console.log("Daily update of all sensors to patch data");
-        updateRainDaily()
-        updateAirTempDaily()
-        updateHumidityDaily()
-        updateWindDirDaily()
-        updateWindSpeedDaily()
-        // console.log(toLocaleISO(new Date()))
+    cron.schedule("20 55 23 * * *", async function () {
+        try{
+            // console.log("---------------------");
+            // console.log("Daily update of all sensors to patch data");
+            await updateRainDaily()
+            await updateAirTempDaily()
+            await updateHumidityDaily()
+            await updateWindDirDaily()
+            await updateWindSpeedDaily()
+            // console.log(toLocaleISO(new Date()))
+        }
+        catch(e){
+            console.log(e)
+        }
+        
     });
 
     console.log('cron-initialised!')
