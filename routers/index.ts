@@ -5,6 +5,10 @@ const app = express()
 import { stationsLatestReadings } from '../controllers/stations'
 import { readRainfall, rainfallLatest } from '../controllers/rainfall'
 import { sendAllLatest } from '../controllers/combination'
+import { challengeLogin } from '../controllers/userCreds'
+import { signJWT } from '../middleware/authCore'
+import { createUser } from '../controllers/user'
+import jwt from 'jsonwebtoken'
 
 const corsConfig = {
     credentials: true,
@@ -61,7 +65,39 @@ app.get('/latest', async (req, res) => {
     }
 })
 
-// console.log(read({}))
+app.post('/login', async (req, res) => {
+    try{
+        const {username, password} = req.body
+        const user = await challengeLogin(username, password)
+        if (user){
+            res.cookie('JP2', await signJWT({id: user.id}), {maxAge:60000*60*24})
+            // res.cookie('JP2', 'hi', {httpOnly:true,maxAge:60000*60*24})
+            res.status(200).json(user)
+        }else{
+            res.status(500).send('Invalid Username or Password!')
+        }
+    }catch(e){
+        res.status(500).send('Invalid Input parameters!')
+    }
+})
+
+app.post('/signup', async (req, res) => {
+    try{
+        // const { name, email, username, password } =  req.body
+        let user : any
+        user = await createUser(req.body)
+        console.log(user)
+        delete user.password
+        if(user){
+            res.status(200).json(user)
+        }else{
+            res.status(500).send('User Creation Failed!')
+        }
+    }catch(e){
+        res.status(500).send('Invalid Input parameters!')
+    }
+})
+
 
 app.listen(process.env.EXPRESS_PORT, () =>
   console.log(`REST API server ready at: http://localhost:${process.env.EXPRESS_PORT}`),

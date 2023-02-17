@@ -56,11 +56,12 @@ model Routes {
 model User {
   id      Int      @id @default(autoincrement())
   email   String   @unique
+  username String  @unique
   password  String
   name    String?
   // places Places[]
   profile Profile?
-  routes  Int?
+  routes  Int[] @default([])
   routes_rel Routes[]
   isAdmin Boolean? @default(false)
 }

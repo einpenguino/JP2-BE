@@ -9,82 +9,28 @@ import { humidityLatestReadings, updateHumidity, updateHumidityDaily } from './c
 import { updateWindDir, updateWindDirDaily, windDirLatestReadings } from './controllers/winddir'
 import { updateWindSpeed, updateWindSpeedDaily, windSpeedLatestReadings } from './controllers/windspeed'
 import { stationsLatestReadings } from './controllers/stations'
-import axios from 'axios'
 import prisma from './controllers/index'
 const cron = require('node-cron')
-import bcrypt from 'bcrypt'
-import { genPassword, comparePassword } from './middleware/hashing'
 import { UserSeed } from './prisma/seed_data'
+import { findUserOrThrow } from './controllers/user'
+import { challengeLogin } from './controllers/userCreds'
 // require('./API/Cron')
 async function main () {
 
 }
 
-// (async () => {
-//   // let a = await parseMetaData(rainData)
-//   // console.log(a)
-//   // let a : any
-//   // a = await getAirTemp('date_time=2023-02-15T15:00:00')
-//   // console.log(parseAPI(a.data))
-//   // updateAirTemp(5, 100)
-//   // updateHumidity(5,100)
-//   // await updateWindDir(5,100)
-//   // await updateWindSpeed(5,100)
-// })()
+try{
 
+}catch(e) {
+  console.log(e)
+}
 (async () => {
-  // try{
-  //   // console.log('index')
-  //   await prisma.places.createMany({
-  //     data : [{
-  //       name:'Home',
-  //       latitude: 1.1,
-  //       longitude: 0
-  //       },
-  //       {
-  //         name:'Work',
-  //         latitude: 0,
-  //         longitude: 1.1
-  //       }
-  //     ],
-  //     skipDuplicates: true
-  //   })
-  // }catch(e){
-  //   console.log(e)
-  // }
-  // try{
-  //   // console.log('index')
-  //   await prisma.user.createMany({
-  //     data : [{
-  //     email:'admin1',
-  //     password: 'admin',
-  //     name: 'admin',
-  //     isAdmin: true
-  //     }],
-  //     skipDuplicates: true
-  //   })
-  // }catch(e){
-  //   console.log(e)
-  // }
-  // try{
-  //   console.log('index')
-  //   await prisma.routes.createMany({
-  //     data : [{
-  //     start_id: 1,
-  //     end_id: 2,
-  //     user_fk: 1
-  //     }],
-  //     skipDuplicates: true
-  //   })
-  // }catch(e){
-  //   console.log(e)
-  // }
-  // const hash = await genPassword('hi')
-  // console.log(hash)
-
-  // const result = await comparePassword('hi', hash)
-  // console.log(result)
-  console.log(await UserSeed())
+  try{
+    // console.log(await findUserOrThrow('admin'))
+    console.log(await challengeLogin('1', 'admin1'))
+  }catch(e) {
+    console.log(e)
+  }
 
 })()
 
