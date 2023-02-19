@@ -11,7 +11,7 @@ import { updateWindSpeed, updateWindSpeedDaily, windSpeedLatestReadings } from '
 import { stationsLatestReadings } from './controllers/stations'
 import prisma from './controllers/index'
 const cron = require('node-cron')
-import { UserSeed } from './prisma/seed_data'
+import { UserSeed } from './prisma/seedData/userSeed'
 import { findUserOrThrow } from './controllers/user'
 import { challengeLogin } from './controllers/userCreds'
 // require('./API/Cron')
@@ -26,10 +26,7 @@ try{
 }
 (async () => {
   try{
-    // console.log(await findUserOrThrow('admin'))
-    console.log(await challengeLogin('1', 'admin1'))
   }catch(e) {
-    console.log(e)
   }
 
 })()

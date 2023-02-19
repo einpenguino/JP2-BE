@@ -9,6 +9,7 @@ import { challengeLogin } from '../controllers/userCreds'
 import { signJWT } from '../middleware/authCore'
 import { createUser } from '../controllers/user'
 import jwt from 'jsonwebtoken'
+import prisma from '../controllers'
 
 const corsConfig = {
     credentials: true,
@@ -19,12 +20,6 @@ app.use(cors(corsConfig))
 app.use(express.json())
 
 // ... your REST API routes will go here
-// app.get('/', find)
-// app.get('/', (req, res) => {
-//     res.send('Hello')
-// })
-
-// async function r1 = 
 app.get('/stations', async (req, res) => {
     try{
         const result = await stationsLatestReadings()
@@ -37,8 +32,8 @@ app.get('/stations', async (req, res) => {
 
 app.get('/rainfall', async (req, res) => {
     try{
-        const result = await readRainfall({})
-        res.json(result)
+        console.log(req.query)
+        res.sendStatus(200)
     }
     catch(e){
         res.sendStatus(500)
@@ -70,8 +65,8 @@ app.post('/login', async (req, res) => {
         const {username, password} = req.body
         const user = await challengeLogin(username, password)
         if (user){
-            res.cookie('JP2', await signJWT({id: user.id}), {maxAge:60000*60*24})
-            // res.cookie('JP2', 'hi', {httpOnly:true,maxAge:60000*60*24})
+            // res.cookie('JP2', await signJWT({id: user.id}), {maxAge:60000*60*24})
+            res.cookie('JP2', await signJWT({id: user.id}), {httpOnly:true,maxAge:60000*60*24})
             res.status(200).json(user)
         }else{
             res.status(500).send('Invalid Username or Password!')
@@ -83,7 +78,6 @@ app.post('/login', async (req, res) => {
 
 app.post('/signup', async (req, res) => {
     try{
-        // const { name, email, username, password } =  req.body
         let user : any
         user = await createUser(req.body)
         console.log(user)
@@ -95,6 +89,29 @@ app.post('/signup', async (req, res) => {
         }
     }catch(e){
         res.status(500).send('Invalid Input parameters!')
+    }
+})
+
+app.delete('/logout', (req, res) => {
+    try{
+        res.clearCookie('JP2')
+        res.sendStatus(200)
+    }catch(e) {
+    //   console.log(e)
+      res.send(500).send('Logout Failed')
+    }
+})
+
+app.post('/faveplace', (req, res) => {
+    try{
+        let a = req.headers.cookie
+        console.log(a)
+        console.log('hi')
+        // const {address, lat, lng} = req.body
+        res.sendStatus(200)
+    }catch(e) {
+      console.log(e)
+      res.status(500).send('Need to log in to favourite place!')
     }
 })
 

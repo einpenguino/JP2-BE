@@ -31,14 +31,26 @@ model Profile {
 
 model Places {
   id  Int @id @default(autoincrement())
-  name String
-  latitude Float
-  longitude Float
-  // user_fk Int
+  address String
+  // alias String?
+  latitude Float?
+  longitude Float?
+  user_fk User[]
+  alias_fk Alias[]
   route_start Routes[] @relation("start_rel")
   route_end Routes[] @relation("end_rel")
   // user_rel User @relation(fields:[user_fk], references:[id])
-  @@unique([name, latitude, longitude])
+  @@unique([address, latitude, longitude])
+}
+model Alias {
+  id  Int @id @default(autoincrement())
+  alias String
+  places_fk Int
+  user_fk Int
+  places_rel Places @relation(fields:[places_fk], references:[id])
+  user_rel User @relation(fields:[user_fk], references:[id])
+
+  @@unique([alias, places_fk,user_fk])
 }
 
 model Routes {
@@ -59,21 +71,13 @@ model User {
   username String  @unique
   password  String
   name    String?
-  // places Places[]
+  places Places[]
+  place_aliases Alias[]
   profile Profile?
   routes  Int[] @default([])
   routes_rel Routes[]
   isAdmin Boolean? @default(false)
 }
-
-// model User {
-//   id      Int      @id @default(autoincrement())
-//   email   String   @unique
-//   name    String?
-//   posts   Post[]
-//   profile Profile?
-//   isAdmin Boolean? @default(false)
-// }
 
 model Airtemp {
   id      Int      @id @default(autoincrement())

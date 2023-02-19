@@ -1,6 +1,8 @@
 import { PrismaClient } from '@prisma/client'
 // import { data } from './seed_data'
-import { UserSeed } from './seed_data'
+import { UserSeed } from './seedData/userSeed'
+import { placesSeed } from './seedData/placesSeed'
+import { routesSeed } from './seedData/routesSeed'
 import rainData from './seedData/rainfall_raw.json'
 import stationData from './seedData/overall_stations.json'
 import airTemp from './seedData/airtemp_raw.json'
@@ -26,6 +28,14 @@ async function seed() {
   await prisma.user.createMany({
     data: await UserSeed(),
     skipDuplicates: true, // Skip 'Bobo'
+  })
+  await prisma.places.createMany({
+    data : placesSeed,
+    skipDuplicates: true
+  })
+  await prisma.routes.createMany({
+    data: routesSeed,
+    skipDuplicates:true
   })
   await prisma.stations.createMany({
     data:stationData.stations,
