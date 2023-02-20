@@ -10,6 +10,8 @@ import { signJWT } from '../middleware/authCore'
 import { createUser } from '../controllers/user'
 import jwt from 'jsonwebtoken'
 import prisma from '../controllers'
+import { auth } from '../middleware/authMiddleware'
+import { findUserOrThrow } from '../controllers/user'
 
 const corsConfig = {
     credentials: true,
@@ -66,7 +68,7 @@ app.post('/login', async (req, res) => {
         const user = await challengeLogin(username, password)
         if (user){
             // res.cookie('JP2', await signJWT({id: user.id}), {maxAge:60000*60*24})
-            res.cookie('JP2', await signJWT({id: user.id}), {httpOnly:true,maxAge:60000*60*24})
+            res.cookie('JP2', await signJWT({username: user.username}), {httpOnly:true,maxAge:60000*60*24})
             res.status(200).json(user)
         }else{
             res.status(500).send('Invalid Username or Password!')
@@ -102,12 +104,17 @@ app.delete('/logout', (req, res) => {
     }
 })
 
-app.post('/faveplace', (req, res) => {
+app.post('/faveplace', async (req, res) => {
     try{
-        let a = req.headers.cookie
-        console.log(a)
-        console.log('hi')
-        // const {address, lat, lng} = req.body
+        if(req.headers.cookie){
+            let decoded = await auth(req, res)
+            console.log(decoded)
+            let user = await findUserOrThrow(decoded.username)
+            let { address, latitude : lat, longitude : lng } = req.body
+            console.log(address, lat, lng)
+        }else{
+            res.status(401).send('Need to log in!')
+        }
         res.sendStatus(200)
     }catch(e) {
       console.log(e)

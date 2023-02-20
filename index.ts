@@ -26,7 +26,36 @@ try{
 }
 (async () => {
   try{
+    await prisma.places.update({
+      where:{
+        id: 1
+      },
+      data:{
+        user_fk: {
+          set:[
+            // {id:1},
+            // {id:2}
+            {username : 'a'},
+            {username : 'yewande'}
+          ]
+        }
+      }
+    })
+    // const places = await prisma.places.findFirstOrThrow({
+    //   where : {
+    //     id: 1
+    //   },
+    //   include:{
+    //     user_fk: {
+    //       select:{
+    //         username:true
+    //       }
+    //     }
+    //   }
+    // })
+    // console.log(places)
   }catch(e) {
+    console.log(e)
   }
 
 })()

@@ -16,6 +16,7 @@ async function findUserOrThrow (username : string) {
           select:{
             id: true,
             email:true,
+            username:true,
             password: true,
             routes: true,
             isAdmin: true
