@@ -12,16 +12,10 @@ async function comparePassword(challengePassword : string, storedHash : string) 
     return result
 }
 
-async function signJWT (data : any){
+function signJWT (data : any){
     let secret : any
     secret = process.env.JWT_SECRET
-    return await jwt.sign(data, secret)
-    // console.log(process.env.JWT_SECRET)
+    return jwt.sign(data, secret)
 }
-// const hash = await bcrypt.hash('hi',10)
-// console.log(hash)
-
-// const result = await bcrypt.compare('hi', hash)
-// console.log(result)
 
 export {genPassword, comparePassword, signJWT}

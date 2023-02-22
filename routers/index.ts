@@ -1,6 +1,7 @@
 import express from 'express'
 const cors = require('cors')
 const app = express()
+// const cookieParser = require('cookie-parser')
 // import read from '../controllers/stations'
 import { stationsLatestReadings } from '../controllers/stations'
 import { readRainfall, rainfallLatest } from '../controllers/rainfall'
@@ -12,6 +13,9 @@ import jwt from 'jsonwebtoken'
 import prisma from '../controllers'
 import { auth } from '../middleware/authMiddleware'
 import { findUserOrThrow } from '../controllers/user'
+import { createPlace, findAddress } from '../controllers/places'
+import { createRoute, findRoutes } from '../controllers/routes'
+import { create } from 'domain'
 
 const corsConfig = {
     credentials: true,
@@ -19,7 +23,9 @@ const corsConfig = {
 };
 // Middleware
 app.use(cors(corsConfig))
+// app.use(cors())
 app.use(express.json())
+// app.use(cookieParser())
 
 // ... your REST API routes will go here
 app.get('/stations', async (req, res) => {
@@ -64,12 +70,15 @@ app.get('/latest', async (req, res) => {
 
 app.post('/login', async (req, res) => {
     try{
+        // console.log(req.body)
         const {username, password} = req.body
         const user = await challengeLogin(username, password)
         if (user){
-            // res.cookie('JP2', await signJWT({id: user.id}), {maxAge:60000*60*24})
-            res.cookie('JP2', await signJWT({username: user.username}), {httpOnly:true,maxAge:60000*60*24})
-            res.status(200).json(user)
+            let token = signJWT({username: user.username})
+            // res.cookie('JP2', signJWT({username: user.username}), {maxAge:60000*60*24})
+            // res.cookie('JP2', token, {httpOnly:true,maxAge:60000*60*24})
+            // console.log(token)
+            res.status(200).cookie('JP2', signJWT({username: user.username}), {maxAge:60000*60*24}).json(user)
         }else{
             res.status(500).send('Invalid Username or Password!')
         }
@@ -94,28 +103,37 @@ app.post('/signup', async (req, res) => {
     }
 })
 
-app.delete('/logout', (req, res) => {
-    try{
-        res.clearCookie('JP2')
-        res.sendStatus(200)
-    }catch(e) {
-    //   console.log(e)
-      res.send(500).send('Logout Failed')
-    }
-})
+// app.delete('/logout', (req, res) => {
+//     try{
+//         res.clearCookie('JP2')
+//         res.sendStatus(200)
+//     }catch(e) {
+//     //   console.log(e)
+//       res.send(500).send('Logout Failed')
+//     }
+// })
 
-app.post('/faveplace', async (req, res) => {
+app.post('/favplace', async (req, res) => {
+    console.log(req.body)
     try{
-        if(req.headers.cookie){
-            let decoded = await auth(req, res)
-            console.log(decoded)
-            let user = await findUserOrThrow(decoded.username)
-            let { address, latitude : lat, longitude : lng } = req.body
-            console.log(address, lat, lng)
+        // console.log(req.headers)
+        console.log(req.body)
+        let user = await findUserOrThrow(req.body.username)
+        if(user){
+            // let decoded = await auth(req, res)
+            // console.log(decoded)
+            // let user = await findUserOrThrow(decoded.username)
+            let { start, end } = req.body
+            // console.log({address : start.address, latitude : start.lat, longitude : start.lng})
+            await createPlace([{address : start.address, latitude : start.lat, longitude : start.lng}])
+            await createPlace([{address : end.address, latitude : end.lat, longitude : end.lng}])
+            const start_id = await findAddress(start.address)
+            const end_id = await findAddress(end.address)
+            await createRoute([{start_id : start_id?.id, end_id : end_id?.id, user_fk : user.id}])
+            res.sendStatus(200)
         }else{
             res.status(401).send('Need to log in!')
         }
-        res.sendStatus(200)
     }catch(e) {
       console.log(e)
       res.status(500).send('Need to log in to favourite place!')
