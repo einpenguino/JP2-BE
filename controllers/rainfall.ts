@@ -20,22 +20,53 @@ async function rainfallLatestReadings () {
         return rainfall
     }
     catch(e){
-        console.log(e)
+        // console.log(e)
+        throw `ReadRainfall Error : ${e}`
     }
     
 }
 
-async function readRainfall(params : any) {
+async function readRainfall(datetime : any) {
     try{
+
         const result = await prisma.rainfall.findMany({
-            where : params,
+            where : {
+              timestamp : {
+                gte : new Date(datetime)
+              },
+            },
             select : {
-                'timestamp' : true,
-                'station_id' : true,
-                'value' : true
+              timestamp: true,
+              station_id : true,
+              value : true
+            },
+            orderBy : {
+              station_id:'asc'
+            },
+            // take : 10000
+           })
+           console.log(result)
+           let resultFormat : any
+           resultFormat = {}
+           result.map((ele) : any => {
+            // resultFormat{
+            let localeISO=toLocaleISO(ele.timestamp)
+            if (!(localeISO in resultFormat)){
+              resultFormat[localeISO] = [{
+                'station' : ele.station_id,
+                'value' : ele.value
+              }]
+            }else{
+              resultFormat[localeISO].push({
+                'station' : ele.station_id,
+                'value' : ele.value
+              })
             }
-        })
-        return result
+        
+            // }
+           }
+        )
+        return resultFormat
     }
     catch(e){
         console.log(e)

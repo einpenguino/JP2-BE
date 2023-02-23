@@ -26,26 +26,50 @@ try{
 }
 (async () => {
   try{
-   const user = await prisma.user.findFirstOrThrow({
-    where:{
-      'username':'a'
+   const result = await prisma.rainfall.findMany({
+    where : {
+      timestamp : {
+        gte : new Date (new Date().getTime() - 1e3 * 60 * 100)
+      },
     },
-    include:{
-      routes_rel:true
-    }
-   })
-   console.log(user)
-   const routes = await prisma.routes.findMany({
-    where: {
-      user_fk : user.id
+    select : {
+      timestamp: true,
+      station_id : true,
+      value : true
     },
-    include : {
-      start_rel : true,
-      end_rel : true,
-      user_rel : true
-    }
+    orderBy : {
+      station_id:'asc'
+    },
+    // take : 10000
    })
-   console.log(routes)
+   console.log(result)
+   let resultFormat : any
+   resultFormat = {}
+   result.map((ele) : any => {
+    // resultFormat{
+    let localeISO=toLocaleISO(ele.timestamp)
+    if (!(localeISO in resultFormat)){
+      resultFormat[localeISO] = [{
+        'station' : ele.station_id,
+        'value' : ele.value
+      }]
+    }else{
+      resultFormat[localeISO].push({
+        'station' : ele.station_id,
+        'value' : ele.value
+      })
+    }
+
+    // }
+   }
+   )
+  //  console.log(toLocaleISO(result[0].timestamp))
+  console.log(resultFormat)
+  // console.log(toLocaleISO(new Date (new Date().getTime() - 1e3 * 60 * 20)))
+  //  console.log(routes)
+  //  let a : any
+  //  a = routes[0]
+  //  console.log(a.user_rel.routes)
     // await prisma.places.update({
     //   where:{
     //     id: 1

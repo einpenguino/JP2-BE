@@ -38,10 +38,10 @@ app.get('/stations', async (req, res) => {
     }
 })
 
-app.get('/rainfall', async (req, res) => {
+app.post('/rainfall', async (req, res) => {
     try{
-        console.log(req.query)
-        res.sendStatus(200)
+        const result = await readRainfall(req.body.datetime)
+        res.status(200).json(result)
     }
     catch(e){
         res.sendStatus(500)
@@ -103,15 +103,16 @@ app.post('/signup', async (req, res) => {
     }
 })
 
-// app.delete('/logout', (req, res) => {
-//     try{
-//         res.clearCookie('JP2')
-//         res.sendStatus(200)
-//     }catch(e) {
-//     //   console.log(e)
-//       res.send(500).send('Logout Failed')
-//     }
-// })
+app.delete('/logout', (req, res) => {
+    try{
+        console.log('logout-triggered!')
+        res.clearCookie('JP2')
+        res.sendStatus(200)
+    }catch(e) {
+    //   console.log(e)
+      res.send(500).send('Logout Failed')
+    }
+})
 
 app.post('/favplace', async (req, res) => {
     console.log(req.body)
@@ -139,6 +140,19 @@ app.post('/favplace', async (req, res) => {
       console.log(e)
       res.status(500).send('Need to log in to favourite place!')
     }
+})
+
+app.post('/getfavroutes', async (req, res) => {
+    try{
+        let routes = await findRoutes(req.body.username)
+        res.status(200).json(routes)
+    }catch(e){
+        res.sendStatus(500)
+    }
+})
+
+app.post('/getuserdetails', async (req, res) => {
+
 })
 
 
