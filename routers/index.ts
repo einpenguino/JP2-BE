@@ -118,18 +118,19 @@ app.post('/favplace', async (req, res) => {
     try{
         // console.log(req.headers)
         console.log(req.body)
-        let user = await findUserOrThrow(req.body.username)
-        if(user){
-            // let decoded = await auth(req, res)
-            // console.log(decoded)
-            // let user = await findUserOrThrow(decoded.username)
+        if(req.headers.cookie){
+            let decoded = await auth(req, res)
+            console.log(decoded)
+            let user : any
+            user = await findUserOrThrow(decoded.username)
+            console.log(user)
             let { start, end } = req.body
             // console.log({address : start.address, latitude : start.lat, longitude : start.lng})
             await createPlace([{address : start.address, latitude : start.lat, longitude : start.lng}])
             await createPlace([{address : end.address, latitude : end.lat, longitude : end.lng}])
             const start_id = await findAddress(start.address)
             const end_id = await findAddress(end.address)
-            await createRoute([{start_id : start_id?.id, end_id : end_id?.id, user_fk : user.id}])
+            await createRoute([{start_id : start_id?.id, end_id : end_id?.id, user_fk : user?.id}])
             res.sendStatus(200)
         }else{
             res.status(401).send('Need to log in!')

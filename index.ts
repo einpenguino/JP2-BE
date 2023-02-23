@@ -26,21 +26,41 @@ try{
 }
 (async () => {
   try{
-    await prisma.places.update({
-      where:{
-        id: 1
-      },
-      data:{
-        user_fk: {
-          set:[
-            // {id:1},
-            // {id:2}
-            {username : 'a'},
-            {username : 'yewande'}
-          ]
-        }
-      }
-    })
+   const user = await prisma.user.findFirstOrThrow({
+    where:{
+      'username':'a'
+    },
+    include:{
+      routes_rel:true
+    }
+   })
+   console.log(user)
+   const routes = await prisma.routes.findMany({
+    where: {
+      user_fk : user.id
+    },
+    include : {
+      start_rel : true,
+      end_rel : true,
+      user_rel : true
+    }
+   })
+   console.log(routes)
+    // await prisma.places.update({
+    //   where:{
+    //     id: 1
+    //   },
+    //   data:{
+    //     user_fk: {
+    //       set:[
+    //         // {id:1},
+    //         // {id:2}
+    //         {username : 'a'},
+    //         {username : 'yewande'}
+    //       ]
+    //     }
+    //   }
+    // })
     // const places = await prisma.places.findFirstOrThrow({
     //   where : {
     //     id: 1
