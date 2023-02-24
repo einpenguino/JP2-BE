@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "jest",
-    "start": "ts-node app.ts",
+    "start": "nodemon app.ts",
     "dev": "nodemon index.ts",
     "devstart": "nodemon app.ts"
   },
@@ -43,7 +43,6 @@
     "express": "^4.18.2",
     "express-async-handler": "^1.2.0",
     "jsonwebtoken": "^9.0.0",
-    "node-cron": "^3.0.2",
-    "ts-node": "^10.9.1"
+    "node-cron": "^3.0.2"
   }
 }
