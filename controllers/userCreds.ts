@@ -2,7 +2,6 @@ import prisma from './index'
 // import jwt from 'jsonwebtoken'
 import { findUserOrThrow } from './user'
 import { genPassword, comparePassword } from '../middleware/authCore'
-import { checkPrime } from 'crypto'
 
 async function challengeLogin (username : string, password : string) {
     try{
