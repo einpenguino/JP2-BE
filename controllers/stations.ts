@@ -1,5 +1,3 @@
-const httpstatus = require('http-status')
-// import httpstatus from 'http-status'
 import prisma from './index'
 // const prisma = require('../app')
 

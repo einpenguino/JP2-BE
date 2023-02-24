@@ -1,5 +1,3 @@
-const httpstatus = require('http-status')
-// import httpstatus from 'http-status'
 import { parseAPI, parseMetaData } from '../API/Parsers'
 import { getRainfall } from '../API/Queries'
 import { toLocaleISO, toLocaleQueryDate, getDailyScheduler, miniScheduler } from '../API/Datetime'

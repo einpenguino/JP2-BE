@@ -1,4 +1,3 @@
-import { errorMonitor } from 'events'
 import prisma from './index'
 
 
