@@ -4,7 +4,7 @@ const app = express()
 // const cookieParser = require('cookie-parser')
 // import read from '../controllers/stations'
 import { stationsLatestReadings } from '../controllers/stations'
-import { readRainfall, rainfallLatest } from '../controllers/rainfall'
+import { readRainfall, rainfallLatest, rainfallFormatted } from '../controllers/rainfall'
 import { sendAllLatest } from '../controllers/combination'
 import { challengeLogin } from '../controllers/userCreds'
 import { signJWT } from '../middleware/authCore'
@@ -40,7 +40,8 @@ app.get('/stations', async (req, res) => {
 
 app.post('/rainfall', async (req, res) => {
     try{
-        const result = await readRainfall(req.body.datetime)
+        // const result = await readRainfall(req.body.datetime)
+        const result = await rainfallFormatted(req.body.datetime)
         res.status(200).json(result)
     }
     catch(e){
