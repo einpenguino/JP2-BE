@@ -5,12 +5,16 @@ const app = express()
 // import read from '../controllers/stations'
 import { stationsLatestReadings } from '../controllers/stations'
 import { readRainfall, rainfallLatest, rainfallFormatted } from '../controllers/rainfall'
+import { humidityFormatted } from '../controllers/humidity'
+import { airTempFormatted } from '../controllers/airtemp'
+import { windDirFormatted } from '../controllers/winddir'
+import { windSpeedFormatted } from '../controllers/windspeed'
 import { sendAllLatest } from '../controllers/combination'
 import { challengeLogin } from '../controllers/userCreds'
 import { signJWT } from '../middleware/authCore'
 import { createUser } from '../controllers/user'
 import jwt from 'jsonwebtoken'
-import prisma from '../controllers'
+import prisma, { winddir } from '../controllers'
 import { auth } from '../middleware/authMiddleware'
 import { findUserOrThrow } from '../controllers/user'
 import { createPlace, findAddress } from '../controllers/places'
@@ -48,6 +52,51 @@ app.post('/rainfall', async (req, res) => {
         res.sendStatus(500)
     }
 })
+
+app.post('/humidity', async (req, res) => {
+    try{
+        // const result = await readRainfall(req.body.datetime)
+        const result = await humidityFormatted(req.body.datetime)
+        res.status(200).json(result)
+    }
+    catch(e){
+        res.sendStatus(500)
+    }
+})
+
+app.post('/airtemp', async (req, res) => {
+    try{
+        // const result = await readRainfall(req.body.datetime)
+        const result = await airTempFormatted(req.body.datetime)
+        res.status(200).json(result)
+    }
+    catch(e){
+        res.sendStatus(500)
+    }
+})
+
+app.post('/winddir', async (req, res) => {
+    try{
+        // const result = await readRainfall(req.body.datetime)
+        const result = await windDirFormatted(req.body.datetime)
+        res.status(200).json(result)
+    }
+    catch(e){
+        res.sendStatus(500)
+    }
+})
+
+app.post('/windspeed', async (req, res) => {
+    try{
+        // const result = await readRainfall(req.body.datetime)
+        const result = await windSpeedFormatted(req.body.datetime)
+        res.status(200).json(result)
+    }
+    catch(e){
+        res.sendStatus(500)
+    }
+})
+
 app.get('/rainfallnow', async (req, res) => {
     try{
         const result = await rainfallLatest()
