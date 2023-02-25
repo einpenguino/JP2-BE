@@ -97,3 +97,51 @@ require(./routers)
 
 ## TODO 
 [] Implement seperate prisma service client for self updating functions
+
+## P-GA
+- Arrays
+- 2-3 Sorting Algos
+- Binary Search
+- Big O Notation
+
+
+## Resources
+- Namaste JS
+- Udemy JS DSA MasterClass by Colt Steele
+- YT Mock Interviewing.io
+
+## Job Application prep
+- ** Self Introduction
+- ** Ask qns
+  - Interview process
+    - How many rounds of interview
+    - live coding?
+  - Interviewer
+  - Scope of Job, team
+- ** Salary Range
+  - Substantiate with skillsets required by Job and team fitting
+  - Try to fit current pay if enquired to target pay
+  - Not legally obligated to reveal salary, can redirect to know more about scope of job and team fitting
+- Never disclose competing offer from competing companies
+- Try to perform negotiations in order of priority:
+  - F2F
+  - Phone call
+  - ** Should not be conducted through email or text
+- Find out why they are contacting you ( to see what they want so can sell yourself better )
+- Interviews should be a conversation
+- Things not to ask
+  - If have WLB in first meeting (Shows lack of drive, could ask about company culture)
+- Technical Qns
+  - Process of arriving at answer is a big part of the conversation, not just getting the answer
+- Things to ask interviewer
+  - How does the team approach and solve problems
+  - Can ask for feedback
+  - What are the key factors for someone to succeed in this role?
+  - How would my role contribute to the progress / success of the team?
+  - If no qns
+    - can pay a compliment (Explained well & clear)
+    - Particulars to drop email (Can drop email for qns in the future)
+- How to make a good impression
+  - Have good research into related matters , be prepared
+- STAR method
+  - Situation, Task, Action, 
